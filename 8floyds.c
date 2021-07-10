@@ -16,9 +16,9 @@ void main()
             res[i][j]=graph[i][j];//copy
         }
     }
-    for(i=0;i<v;i++)
-        for(j=0;j<v;j++)
-            for(k=0;k<v;k++)
+    for(k=0;k<v;k++)
+        for(i=0;i<v;i++)
+            for(j=0;j<v;j++)
                 if(res[i][k]+res[k][j]<res[i][j]) // find min and append min
                     res[i][j]=res[i][k]+res[k][j];
     //print
