@@ -20,11 +20,11 @@ void main()
     }
    
     
-    for(i=0;i<v;i++)
+    for(k=0;k<v;k++)
     {
-        for(j=0;j<v;j++)
+        for(i=0;i<v;i++)
         {
-            for(k=0;k<v;k++)
+            for(j=0;j<v;j++)
             {
                 reach[i][j]=reach[i][j] || (reach[i][k]&&reach[k][j]);
             }
