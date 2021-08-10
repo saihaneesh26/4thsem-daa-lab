@@ -6,9 +6,9 @@
 void main()
 {
     int i,k;
-   // for(i=1;i<2;i++)
-    //{
-        int n=10;
+   for(i=1;i<11;i++)
+   {
+        int n=10000*i;
          int arr[n];
         for(k=0;k<n;k++)
         {
@@ -37,5 +37,5 @@ void main()
         double end = clock();
         double time = (end-start)/CLOCKS_PER_SEC;
         printf("n:%d time:%lf\n",n,time);
-  //  }
+   }
 }
