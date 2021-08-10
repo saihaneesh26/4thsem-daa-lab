@@ -13,9 +13,7 @@ void main()
         for(k=0;k<n;k++)
         {
             int r = rand();
-            printf("%d",r);
             arr[k]=r;
-            printf("%d",k);
         }
         double start = clock();
         {
