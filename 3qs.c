@@ -1,15 +1,16 @@
 #include<stdio.h>
 #include<stdlib.h>
-void swap(int* a, int* b)
+#include<time.h>
+void swap(long int* a,long int* b)
 {
-    int t = *a;
+  long  int t = *a;
     *a = *b;
     *b = t;
 }
 
-int partition (int arr[], int low, int high)
+int partition (long int arr[], int low, int high)
 {
-    int pivot = arr[low]; 
+  long  int pivot = arr[low]; 
     int idx = low;
     int i = low+1; // Index of smaller element and indicates the right position of pivot found so far
     int j = high;
@@ -25,7 +26,7 @@ int partition (int arr[], int low, int high)
     return j;
 }
 
-void quicksort(int arr[], int low, int high)
+void quicksort(long int arr[], int low, int high)
 {
     if (low < high)
     {
@@ -37,8 +38,23 @@ void quicksort(int arr[], int low, int high)
 
 void main()
 {
-    int arr[] = {7, 6, 9, 1, 5};
-    int n = sizeof(arr) / sizeof(arr[0]);
+int i,k,n;long int arr[100000];
+for(k=1;k<=10;k++)
+{
+	n=10000*k;
+	for(i=0;i<n;i++)
+	{
+		long int r = rand();
+		arr[i] =r;
+	}
+double start = clock();
     quicksort(arr,0,n-1);
-for(int i=0;i<n;i++)printf("%d ",arr[i]);
+double end = clock();
+double time = (end-start)/CLOCKS_PER_SEC;
+printf("n:%d -- time:%e\n",n,time);
 }
+}
+
+
+
+
