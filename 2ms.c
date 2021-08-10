@@ -1,15 +1,16 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<time.h>
 
 void merge(int l,int m,int r,int a[])
 {
     int s1=m-l+1;
     int s2=r-m;
     int b[s1];
-    int c[s2];
+    int c[s2],u,v;
 
-    for(int u=0;u<s1;u++)b[u]=a[l+u];
-    for(int v=0;v<s2;v++)c[v]=a[m+1+v];
+    for( u=0;u<s1;u++)b[u]=a[l+u];
+    for( v=0;v<s2;v++)c[v]=a[m+1+v];
 
     int i=0,j=0,k=l;
     while(i<s1&&j<s2)
@@ -49,12 +50,16 @@ void mergesort(int l,int r,int a[])
 }
 void main()
 {
-    int a[5];
-    for(int i=0;i<5;i++)a[i]=5-i;
-    int s=sizeof(a)/sizeof(a[0]);
-    
-    for(int i=0;i<s;i++)printf("%d ",a[i]);
-    mergesort(0,s-1,a);
-    for(int i=0;i<s;i++)printf("%d ",a[i]);
+int i=0;
+for(i=1;i<=10;i++){
+int n=10000*i;
+    int a[n];
+   
+  	double start = clock();  
 
+    mergesort(0,n-1,a);
+double end = clock();
+double time = (end-start)/CLOCKS_PER_SEC;
+printf("n:%d -- time:%e \n",n,time);
+}
 }
