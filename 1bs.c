@@ -31,3 +31,5 @@ double end = clock();
 double t = (end-start)/CLOCKS_PER_SEC;
 printf("n:%d -- total:%e\n",n,t);
 }
+//gcc name.c 
+//./a.out
