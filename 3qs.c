@@ -51,7 +51,7 @@ double start = clock();
     quicksort(arr,0,n-1);
 double end = clock();
 double time = (end-start)/CLOCKS_PER_SEC;
-printf("n:%d -- time:%e\n",n,time);
+printf("n:%d -- time:%lf\n",n,time);
 }
 }
 
