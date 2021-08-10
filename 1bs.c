@@ -1,19 +1,23 @@
 #include<stdio.h>
-
+#include<stdlib.h>
+#include<time.h>
 void main()
 {
-    int a[10];
-    int l=10;
-    for(int i=0;i<=9;i++)
+int n=1000;
+    int a[n];
+int i,j;
+    for( i=0;i<=n-1;i++)
     {
-        a[i]=10-i;
+	int r = rand();
+        a[i]=r;
     }
 
     //bs
+double start = clock();
 
-    for(int i=0;i<=l-1;i++)
+    for( i=0;i<=n-1;i++)
     {
-        for(int j=0;j<=l-2-i;j++)
+        for( j=0;j<=n-2-i;j++)
         {
             if(a[j]>a[j+1])
             {
@@ -23,10 +27,7 @@ void main()
             }
         }
     }
-    for(int i=0;i<=9;i++)
-    {
-        printf("%d\n",a[i]);
-    }
-    
-
+double end = clock();
+double t = (end-start)/CLOCKS_PER_SEC;
+printf("n:%d -- total:%e\n",n,t);
 }
