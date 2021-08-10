@@ -1,4 +1,6 @@
 #include<stdio.h>
+#include<time.h>
+#include<stdlib.h>
 
 void max_heap(int arr[],int n,int i)
 {
@@ -21,11 +23,12 @@ void max_heap(int arr[],int n,int i)
 
 void heapsort(int arr[],int n)
 {
-    for(int i=n/2-1;i>=0;i--)
+int i;
+    for( i=n/2-1;i>=0;i--)
     {
         max_heap(arr,n,i);
     }
-    for(int i=n-1;i>0;i--)
+    for( i=n-1;i>0;i--)
     {
         int t=arr[0];
         arr[0]=arr[i];
@@ -36,8 +39,17 @@ void heapsort(int arr[],int n)
 
 void main()
 {
-    int arr[]={12,11,13,6,5,7};
-    int n=sizeof(arr)/sizeof(arr[0]);
-    heapsort(arr,n);
-    for(int i=0;i<n;i++)printf("%d ",arr[i]);
+	int i,n;
+for(i=1;i<=10;i++){
+	n=10000*i;
+    int arr[n];
+double st = clock();  
+  heapsort(arr,n);
+double e = clock();
+double t = (e-st)/CLOCKS_PER_SEC;
+printf("n:%d -- time:%lf\n",n,t);
+//    for(int i=0;i<10;i++)printf("%d ",arr[i]);
 }
+}
+
+
